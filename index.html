@@ -25,20 +25,31 @@
 
     </script>
 
+    <!-- My custom thangs -->
     <script>
-      document.addEventListener("DOMContentLoaded", function(){
-        //Bind all anchor tags to open their links a new window/tab
-        var links = document.getElementsByTagName("a");
-        for (var i = 0; i < links.length; i++) {
-          links[i].setAttribute('target', '_blank');
+      (function() {
+        
+        document.addEventListener("DOMContentLoaded", function(){
+          bindTheAnchors();
+          slideTheDoor();        
+        });
+
+        function bindTheAnchors() {
+          //Bind all anchor tags to open their links a new window/tab
+          var links = document.getElementsByTagName("a");
+          for (var i = 0; i < links.length; i++) {
+            links[i].setAttribute('target', '_blank');
+          }
         }
 
-        // Silly door opening animation for minime
-        var door = document.getElementById('minime-door');
-        setTimeout(function() {
-          door.style['right'] = '-200px';
-        }, 300);
-      });
+        function slideTheDoor() {
+          // Silly door opening animation for minime
+          var door = document.getElementById('minime-door');
+          setTimeout(function() {
+            door.style['right'] = '-200px';
+          }, 300);
+        }
+      })();
     </script>
 
     <style>
